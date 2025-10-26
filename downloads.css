@@ -97,6 +97,35 @@ body {
     text-decoration: underline;
   }
 
+  .icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon-button button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 54px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  
+  .icon-button button:hover {
+    transform: scale(1.15);
+  }
+  
+  .icon-button span {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+
   @media (max-width: 800px) {
    
     .window-tab {
