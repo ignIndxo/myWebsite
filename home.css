@@ -220,6 +220,13 @@ body {
   .window-tab {
     display: none;
   }
+  .mobile-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
 
   .intro-text {
         display: flex;
@@ -229,6 +236,7 @@ body {
         gap: 0;
         width: 100%;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     .intro-text-block {
@@ -236,14 +244,10 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        align-items: center;
     }
 
-  .mobile-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-  }
+
 
   .icon-grid {
     display: grid;
