@@ -60,24 +60,18 @@ body {
 
 /* === Intro Text === */
 .intro-text {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px; 
-}
-
-.intro-text-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .intro-text h1 {
-    font-size: 74px;
-    margin: 0;
-    color: #222;
+  font-size: 74px;
+  margin: 0;
+  color: #222;
 }
 
 .greeting {
@@ -108,38 +102,6 @@ body {
   font-weight: 300;
   margin-top: 4px;
   color: #666;
-}
-
-/* === Manifesto Button === */
-
-.manifesto-button {
-    text-decoration: none;
-    cursor: pointer;
-    align-self: center; 
-}
-
-.manifesto-button img {
-    width: 150px;
-    height: auto;
-    border: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    display: block;
-}
-
-.manifesto-button:hover img {
-    transform: scale(1.1);
-    opacity: 0.8;
-}
-
-.manifesto-content span {
-    margin-top: 8px;
-    font-size: 18px;
-    color: #333;
-    text-align: center;
-}
-
-.mobile-only-manifesto {
-    display: none;
 }
 
 /* === Icon Buttons === */
@@ -188,55 +150,10 @@ body {
   display: none;
 }
 
-.manifesto-mobile-container {
-    padding-top: 30px;
-    text-align: center;
-}
-
-.manifesto-button.mobile-only-manifesto {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    color: #333;
-}
-
-.manifesto-button.mobile-only-manifesto img {
-    width: 70px; 
-    height: auto;
-    margin-bottom: 5px;
-    transition: transform 0.2s ease;
-}
-
-.manifesto-button.mobile-only-manifesto:hover img {
-    transform: scale(1.05);
-}
-
-.manifesto-button.mobile-only-manifesto span {
-    font-size: 14px;
-    font-weight: 600;
-}
-
 @media (max-width: 800px) {
   .window-tab {
     display: none;
   }
-
-  .intro-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .intro-text-block {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 
   .mobile-layout {
     display: flex;
