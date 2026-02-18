@@ -211,6 +211,120 @@ body {
     opacity: 0.8;
   }
 
+  /* === Dividers === */
+
+  .divider {
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+    width: 100%;
+  }
+
+  /* === Tools and Development === */
+
+  .tools-section, .development-section {
+    margin-bottom: 30px;
+  }
+  
+  .tools-section h2,
+  .development-section h2,
+  .projects-section h2 {
+    text-align: left;
+    font-weight: 800;
+    font-size: 2rem; /* Increased from 1.2rem */
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    color: #222;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transition: all 0.2s ease;
+  }
+  
+  .tag {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+    cursor: default;
+    user-select: none;
+  }
+
+  .tag:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  /* === Projects Section === */
+
+  .projects-section {
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  .projects-section h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #333;
+  }
+  
+  .project-entry {
+    margin-bottom: 50px;
+    max-width: 100%;
+  }
+  
+  .project-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .project-title {
+    color: #f49c23;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  
+  .project-description a {
+    color: #d9822b;
+    text-decoration: underline;
+  }
+
+  /* === Github Footer === */
+
+  .github-footer {
+    font-size: 1.1rem;
+    margin-top: 40px;
+    color: #333;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .github-footer a {
+    color: #d9822b;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  
+  .github-footer a:hover {
+    opacity: 0.8;
+  }
+
   @media (max-width: 800px) {
    
     .window-tab {
