@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Blog Posts</title>
+        <title>Blog Updates</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style type="text/css">
-            body{
-                font-family: Arial, Helvetica, sans-serif;
-            }
-        </style>
-        <link rel="stylesheet" href="blog.css">
+        
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/blog.css">
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet"> 
@@ -18,24 +16,235 @@
     <body>
         
         <div class="responsive-wrapper">
-            <div class="window-tab">
+            <div class="window-tab blog-window">
                 <div class="title-bar">
-                    <span class="title-text">My blog</span>
+                    <span class="title-text">updates</span>
                     <a href="index.html" class="back-button">[X]</a>
                 </div>
-                <div class="window-body">
-                    <div class="intro-text">
-                        <p>
-                            Nothing to see here at the moment</a>
-                        </p>
-                        <p>
-                            check back later :(
-                        </p>
+
+                <div class="window-body blog-container">
+                    
+                    <!-- Controls Area -->
+                    <div class="blog-header">
+                        <div class="filter-group">
+                            <button class="filter-btn active" onclick="switchView('all', this)">All</button>
+                            <button class="filter-btn" onclick="switchView('stats', this)">Stats</button>
+                            <button class="filter-btn" onclick="switchView('cs', this)">Computer Science</button>
+                            <button class="filter-btn" onclick="switchView('life', this)">Life Updates</button>
+                        </div>
+                        
+                        <select class="sort-select" id="sortSelect" onchange="sortPosts()">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                        </select>
                     </div>
+
+                    <h2 class="feed-title" id="pageTitle">All Updates</h2>
+
+                    <!-- 1. BLOG FEED CONTAINER -->
+                    <div id="postsContainer" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+
+                        <!-- Post: Life -->
+                        <article class="blog-post" data-category="life" data-date="2025-11-30">
+                            <div class="post-header">
+                                <div class="user-info">
+                                    <img src="assets/images/indo.png" alt="Profile" class="user-avatar">
+                                    <div>
+                                        <div class="username">Indigo</div>
+                                        <div class="handle">@ignIndxo</div>
+                                    </div>
+                                </div>
+                                <span class="post-tag tag-life">Life Update</span>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text">
+                                    My mother and I are both big fans of Snoopy! In London this winter, they put up little houses with snoopy resting on top around the center of the city so we decided to pay them a visit!
+                                </p>
+                                <p class="post-text">
+                                    It was perfect weather, blue skies and very cold and brisk. There were 12 Snoopy's to find in total, each one decorated uniquely :D Would definitely recommend to anyone travelling to London this winter. 
+                                </p>
+                                <div class="post-media">
+                                    <img src="assets/images/blog/lifeUpdates/snoopy.png" alt="Snoopy"> 
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <span class="post-date">Nov 30, 2025</span>
+                            </div>
+                        </article>
+
+                        <!-- Post: CS -->
+                        <article class="blog-post" data-category="cs" data-date="2025-10-17">
+                            <div class="post-header">
+                                <div class="user-info">
+                                    <img src="assets/images/indo.png" alt="Profile" class="user-avatar">
+                                    <div>
+                                        <div class="username">Indigo</div>
+                                        <div class="handle">@ignIndxo</div>
+                                    </div>
+                                </div>
+                                <span class="post-tag tag-cs">Computer Science</span>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text">
+                                    Starting blog posts! I coded this to look a little different to the rest of my website. Have a look around!
+                                </p>
+                            </div>
+                            <div class="post-footer">
+                                <span class="post-date">Oct 17, 2025</span>
+                            </div>
+                        </article>
+                        <!-- New Post -->
+                        <article class="blog-post" data-category="cs" data-date="2026-02-02">
+                            <div class="post-header">
+                                <div class="user-info">
+                                    <img src="assets/images/indo.png" alt="Profile" class="user-avatar">
+                                    <div>
+                                        <div class="username">Indigo</div>
+                                        <div class="handle">@ignIndxo</div>
+                                    </div>
+                                </div>
+                                <span class="post-tag tag-cs">Computer Science</span>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text">
+                                    Me and my friends decided to participate in the Global Game Jam at Southampton this year. The theme we were given was "mask". Initially we spent the whole of Friday evening brainstorming, coming up with ideas for music and assets, and getting very excited for our project.
+                                </p>
+                                <p class="post-text">
+                                    By Saturday morning we were in full swing, coding, drawing, designing levels for what would become a very well completed puzzle game. I spent most of my time drawing pixel art (something which I was not very used to) on a 2000 x 2000 pixel scale, so as you can imagine by arm was aching by the end of the day. 
+                                </p>
+                                <p class="post-text">
+                                    On Sunday morning we spent our time polishing up the project before going around the building and getting to test what other people had built. It was amazing to see the creativity and designs that other people had come up with. 
+                                </p>
+                                <p class="post-text">
+                                    Tom then announced the Southampton Global Game Jam People's Choice award and we won! It was incredibly rewarding to see all our hard work appreciated and enjoyed by fellow game jammers and peers and I can't wait to work on my next game related project.
+                                </p>
+                            </div>
+                            <div class="post-footer">
+                                <span class="post-date">Feb 02, 2026</span>
+                            </div>
+                        </article>
+
+                    </div> 
+                    <!-- END BLOG FEED -->
+
+
+                    <!-- 2. STATS / MUSIC CONTAINER -->
+                    <div id="statsContainer" class="stats-container" style="display: none;">
+                        
+                        <div class="music-card">
+                            <div class="music-header">
+                                <i class="fa-solid fa-headphones"></i>
+                                <h3 class="music-title">On Repeat Right Now</h3>
+                            </div>
+
+                            <div class="track-list">
+                                <!-- Track 1 -->
+                                <div class="track-item">
+                                    <img src="assets/images/blog/stats/favourite.png" alt="Album Art" class="track-img">
+                                    <div class="track-info">
+                                        <div class="song-name">Favourite</div>
+                                        <div class="artist-name">Fontaines D.C.</div>
+                                    </div>
+                                    <!-- Animated Bars -->
+                                    <div class="playing-animation">
+                                        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Track 2 -->
+                                <div class="track-item">
+                                    <img src="assets/images/blog/stats/midas.png" alt="Album Art" class="track-img">
+                                    <div class="track-info">
+                                        <div class="song-name">Midas</div>
+                                        <div class="artist-name">Wunderhorse</div>
+                                    </div>
+                                </div>
+
+                                <!-- Track 3 -->
+                                <div class="track-item">
+                                    <img src="assets/images/blog/stats/closerToFine.png" alt="Album Art" class="track-img">
+                                    <div class="track-info">
+                                        <div class="song-name">Closer to Fine</div>
+                                        <div class="artist-name">Indigo Girls</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add more stat cards here later (Github stats, etc) -->
+
+                    </div>
+                    <!-- END STATS CONTAINER -->
+
                 </div>
             </div>
         </div>
 
-    </body>
+        <!-- REVISED JAVASCRIPT -->
+        <script>
+            function switchView(category, btnElement) {
+                // 1. Update Button Styling
+                const buttons = document.querySelectorAll('.filter-btn');
+                buttons.forEach(btn => btn.classList.remove('active'));
+                btnElement.classList.add('active');
 
+                // 2. Get Containers
+                const postsContainer = document.getElementById('postsContainer');
+                const statsContainer = document.getElementById('statsContainer');
+                const sortSelect = document.getElementById('sortSelect');
+                const pageTitle = document.getElementById('pageTitle');
+
+                // 3. Logic Switch
+                if (category === 'stats') {
+                    // Show Stats, Hide Feed
+                    postsContainer.style.display = 'none';
+                    statsContainer.style.display = 'flex'; 
+                    sortSelect.style.visibility = 'hidden'; 
+                    pageTitle.innerText = 'My Statistics';
+                } else {
+                    // Show Feed, Hide Stats
+                    postsContainer.style.display = 'flex'; 
+                    statsContainer.style.display = 'none';
+                    sortSelect.style.visibility = 'visible';
+                    
+                    // Filter Logic for Posts
+                    const posts = document.querySelectorAll('.blog-post');
+                    let visibleCount = 0;
+
+                    if (category === 'all') {
+                        pageTitle.innerText = 'All Updates';
+                        posts.forEach(post => post.style.display = 'block');
+                    } else {
+                        // Handle specific categories (Life, CS)
+                        const titleMap = { 'cs': 'Computer Science', 'life': 'Life Updates' };
+                        pageTitle.innerText = titleMap[category];
+
+                        posts.forEach(post => {
+                            if (post.getAttribute('data-category') === category) {
+                                post.style.display = 'block';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
+                    }
+                }
+            }
+
+            // Existing Sort Function (Unchanged)
+            function sortPosts() {
+                const container = document.getElementById('postsContainer');
+                const sortValue = document.getElementById('sortSelect').value;
+                const posts = Array.from(container.getElementsByClassName('blog-post'));
+
+                posts.sort((a, b) => {
+                    const dateA = new Date(a.getAttribute('data-date'));
+                    const dateB = new Date(b.getAttribute('data-date'));
+                    return sortValue === 'newest' ? dateB - dateA : dateA - dateB;
+                });
+
+                posts.forEach(post => container.appendChild(post));
+            }
+        </script>
+
+    </body>
 </html>

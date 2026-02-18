@@ -1,0 +1,310 @@
+/* assets/css/blog.css */
+
+/* --- 1. Window Size Overrides --- */
+/* We add this class to the HTML to make this specific window huge */
+.window-tab.blog-window {
+    width: 95vw;           /* Takes up 95% of screen width */
+    max-width: 1100px;     /* Cap it at 1100px so lines aren't too long to read */
+    height: 85vh;          /* Takes up 85% of screen height */
+    max-height: none;      /* Removes the 500px limit from style.css */
+}
+
+/* --- 2. Layout & Background --- */
+.window-body.blog-container {
+    /* Much lighter, subtle pink gradient */
+    background: linear-gradient(180deg, #fff9fb 0%, #fff0f5 100%); 
+    padding: 30px;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- 3. Header Controls --- */
+.blog-header {
+    width: 100%;
+    max-width: 800px; /* Keep controls centered and not too wide */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 6px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    color: #666;
+}
+
+.filter-btn:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.filter-btn.active {
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Sort Dropdown */
+.sort-select {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    cursor: pointer;
+}
+
+.feed-title {
+    width: 100%;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 28px;
+    color: #444;
+    margin: 10px 0 30px 0;
+    letter-spacing: 1px;
+}
+
+/* --- 4. Blog Post Card --- */
+.blog-post {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px; 
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(138, 100, 115, 0.08); /* Softer shadow */
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: transform 0.2s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-2px);
+}
+
+/* ... (Rest of card styles similar to previous) ... */
+.post-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.user-info { display: flex; align-items: center; gap: 12px; }
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.username { font-weight: 800; font-size: 17px; color: #222; }
+.handle { font-weight: 500; font-size: 14px; color: #999; }
+
+.post-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag-life { background-color: #e0f2fe; color: #0284c7; }
+.tag-cs { background-color: #f3e8ff; color: #9333ea; }
+.tag-stats { background-color: #dcfce7; color: #16a34a; }
+
+.post-text {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    border: 1px solid #f0f0f0;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f7f7f7;
+}
+
+.post-date {
+    font-size: 13px;
+    color: #aaa;
+    font-family: 'Space Mono', monospace;
+}
+
+/* --- STATS / MUSIC SECTION --- */
+
+.stats-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* The Music Card */
+.music-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(138, 100, 115, 0.08);
+    box-sizing: border-box;
+}
+
+.music-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.spotify-icon {
+    font-size: 28px;
+    color: #1db954; /* Spotify Green */
+}
+
+.music-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* Track List */
+.track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.track-item:hover {
+    background-color: #f9f9f9;
+}
+
+.track-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.track-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.song-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.artist-name {
+    font-size: 13px;
+    color: #777;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Animated Equalizer Bars (Pure CSS) */
+.playing-animation {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 15px;
+}
+
+.bar {
+    width: 3px;
+    background-color: #db9ecb;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+.bar:nth-child(2) { animation-delay: 0.1s; height: 60%; }
+.bar:nth-child(3) { animation-delay: 0.2s; height: 80%; }
+
+@keyframes bounce {
+    0%, 100% { height: 20%; }
+    50% { height: 100%; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 800px) {
+    .window-tab.blog-window {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        border: none;
+    }
+    
+    .blog-header {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

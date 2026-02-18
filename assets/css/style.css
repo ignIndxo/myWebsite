@@ -1,0 +1,708 @@
+/* =========================================
+   1. VARIABLES & SETUP
+   ========================================= */
+:root {
+  /* Colors */
+  --bg-color: #ffffff;
+  --window-border: #b8b8b8;
+  --title-bar-bg: #444444;
+  --text-main: #222222;
+  --text-muted: #555555;
+  --accent-color: #ff8c42;       /* The orange used for buttons/links */
+  --accent-hover: #e6762f;
+  --notification-bg: #fff8dc;    /* The yellow background for intro boxes */
+  
+  /* Fonts */
+  --font-main: 'Nunito', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Background Image logic */
+@media (min-width: 801px) {
+  body {
+    background-image: url('../images/background.png');
+    background-size: cover;         
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;   
+  }
+}
+
+/* =========================================
+   2. MAIN WINDOW LAYOUT (Shared across all pages)
+   ========================================= */
+.responsive-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-tab {
+  width: 90vw;
+  max-width: 800px;
+  height: 500px; 
+  border: 2px solid var(--window-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.title-bar {
+  height: 50px;
+  flex-shrink: 0;
+  background-color: var(--title-bar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top-left-radius: 6px; 
+  border-top-right-radius: 6px;
+}
+
+.title-text {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.window-body {  
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  overflow-y: auto; 
+  padding: 0; 
+}
+
+/* =========================================
+   3. COMPONENTS (Buttons, Links, Boxes)
+   ========================================= */
+
+/* The [X] Back Button */
+.back-button { 
+  font-family: var(--font-mono); 
+  font-size: 16px; 
+  color: #fff; 
+  text-decoration: none; 
+  cursor: pointer; 
+  transition: transform 0.2s ease; 
+  line-height: 1;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+}
+
+.notice-box {
+  background-color: var(--notification-bg);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto;
+  max-width: 90%; 
+}
+
+.notice-box a {
+  color: var(--accent-color); 
+  text-decoration: underline;
+}
+
+.divider {
+  border-top: 1px solid #ddd;
+  margin: 40px 0;
+  width: 100%;
+}
+
+.icon-button a {
+    text-decoration: none;
+    color: inherit;       
+    display: flex;         
+    outline: none;
+}
+
+/* =========================================
+   4. HOME PAGE STYLES
+   ========================================= */
+
+.home-body {
+  padding: 50px 40px;
+  justify-content: space-between;
+}
+
+.home-intro {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-intro h1 {
+  font-size: 74px;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.home-intro p {
+  font-size: 28px;
+  font-weight: 300;
+  margin-top: 4px;
+  color: #666;
+}
+
+.greeting {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.name {
+  font-weight: 600;
+}
+
+
+.rainbow-text {
+  animation: rainbowShift 4s linear infinite;
+}
+
+@keyframes rainbowShift {
+  0%   { color: rgb(67, 44, 126); }
+  16%  { color: rgb(79, 50, 147); }
+  33%  { color: rgb(79, 12, 141); }
+  50%  { color: indigo; }
+  66%  { color: rgb(59, 40, 136); }
+  83%  { color: rgb(35, 26, 114); }
+  100% { color: rgb(62, 28, 126); }
+}
+
+/* Home Page Icons Row */
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* Shared Icon Button Style (Home & Links) */
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 80px; 
+}
+
+.icon-button button {
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.icon-button button:hover {
+  transform: scale(1.1);
+}
+
+.icon-button span {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* =========================================
+   5. ABOUT ME PAGE
+   ========================================= */
+
+.about-header {
+  flex-shrink: 0;
+  background-color: #fff;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-image img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-summary {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.about-summary h2 {
+  font-size: 38px;
+  margin: 8px 0 0 0;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.about-summary p {
+  font-size: 16px;
+  margin-top: 8px;
+  color: var(--text-muted);
+}
+
+.content-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 40px;
+}
+
+.interests-section, 
+.education-section {
+  margin-top: 40px;
+  padding: 0 10px;
+}
+
+.interests-section h3, 
+.education-section h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 600;
+}
+
+.interests-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.interests-section li {
+  margin-bottom: 8px;
+}
+
+.education-entry {
+  margin-bottom: 20px;
+}
+
+.education-entry h4 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.education-entry p {
+  font-size: 15px;
+  margin: 4px 0;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   6. LINKS & BLOG PAGE (Grid Layout)
+   ========================================= */
+
+.content-body {
+    padding: 50px 40px 60px;
+    align-items: center;
+}
+
+.intro-text-simple {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro-text-simple p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-top: 8px;
+    color: #666;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.6fr 1.2fr;
+  gap: 40px 40px;
+  justify-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Make icons in the grid larger than home page */
+.icon-grid .icon-button button {
+    font-size: 54px; 
+    width: auto; 
+    height: auto;
+}
+
+.icon-grid .icon-button span {
+    font-size: 14px;
+}
+
+/* =========================================
+   7. PROJECTS PAGE
+   ========================================= */
+
+.projects-body {
+    padding: 50px 40px 60px;
+    align-items: flex-start;
+}
+
+.tools-section, .development-section {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.tools-section h2,
+.development-section h2,
+.projects-section h2 {
+  text-align: left;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  cursor: default;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.tag:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.projects-section {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.project-entry {
+  margin-bottom: 50px;
+  max-width: 100%;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.project-title {
+  color: #f49c23; 
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.project-description a,
+.github-footer a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.github-footer {
+  font-size: 1.1rem;
+  margin-top: 40px;
+  color: #333;
+  text-align: left;
+  width: 100%;
+}
+
+/* =========================================
+   8. CONTACT PAGE
+   ========================================= */
+.contact-body {
+    padding: 20px;
+    text-align: center;
+    gap: 16px;
+    justify-content: flex-start;
+}
+
+.contact-heading {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 5px;
+  color: #333;
+}
+
+.contact-description,
+.contact-email {
+  font-size: 14px;
+  color: #555;
+  margin: 5px;
+}
+
+.contact-email a {
+  color: var(--accent-color);
+  text-decoration: none; 
+  font-weight: 600; 
+}
+
+.contact-image img {
+  width: 140px;
+  height: auto;
+  margin: 0;
+}
+
+.email-button { 
+  display: inline-block;
+  align-self: center;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+  width: auto;
+}
+
+.email-button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* =========================================
+   9. FAQ PAGE
+   ========================================= */
+.faq-section {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-section details {
+  border: 1px solid #ccc;    
+  border-radius: 10px;       
+  overflow: hidden;       
+  background: none;         
+  transition: box-shadow 0.18s ease, border-color 0.18s ease; 
+}
+
+.faq-section summary {
+  background: #fff4c2; 
+  color: #333;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.faq-section summary::-webkit-details-marker { display: none; }
+.faq-section summary::marker { content: ""; }
+
+.faq-section summary::after {
+  content: "▸";
+  font-size: 1.05rem;
+  color: #242424;
+  transition: transform 0.18s ease;
+  margin-left: 12px;
+}
+
+.faq-section details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.faq-section summary:focus-visible {
+  box-shadow: 0 0 0 4px rgba(68,68,68,0.12);
+}
+
+.faq-section details > *:not(summary) {
+  padding: 18px 22px 22px;
+  background: #ffffff;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+
+/* =========================================
+   10. MOBILE LAYOUT (Unified Media Queries)
+   ========================================= */
+
+.mobile-layout {
+  display: none; 
+}
+
+@media (max-width: 800px) {
+  
+  .window-tab {
+    width: 100vw;
+    height: 100vh;
+    min-height: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+ 
+  body:has(.mobile-layout) .window-tab {
+     
+  }
+  
+  
+  /* Mobile Layout Container (Visible only on mobile home) */
+  .mobile-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  /* Adjust Window Body padding for mobile */
+  .window-body, 
+  .content-body, 
+  .projects-body,
+  .home-body {
+    padding: 20px;
+    display: block;
+    overflow-y: auto;
+  }
+
+  .intro-text-simple {
+      display: none; /* Hide intro text on links/blog mobile */
+  }
+
+  /* Mobile Links Grid/Buttons */
+  .icon-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 0; 
+  }
+
+  /* Mobile Button Style */
+  .icon-grid .icon-button,
+  .mobile-layout .icon-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    background-color: #a2a2a2; 
+    border-radius: 12px; 
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  .icon-grid .icon-button button,
+  .mobile-layout .icon-button button {
+      width: 60px;
+      height: auto;
+      font-size: 48px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      flex-shrink: 0;
+  }
+
+  .icon-grid .icon-button span,
+  .mobile-layout .icon-button span {
+    color: #fff;
+    font-family: var(--font-main);
+    font-size: 20px;
+    flex: 1;
+    text-align: left;
+    margin-top: 0;
+  }
+  
+  .icon-grid .icon-button:hover,
+  .mobile-layout .icon-button:hover {
+      transform: scale(1.03);
+      background-color: #5d5d5d;
+  }
+
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+  }
+  
+  .about-summary {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+  
+  .about-image img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .contact-heading { font-size: 32px; }
+  .contact-description, .contact-email { font-size: 16px; }
+  .contact-image img { width: 180px; }
+  .email-button { font-size: 16px; padding: 10px 20px; margin-top: 12px; }
+}
