@@ -187,7 +187,7 @@ body {
 
 @media (min-width: 801px) {
   body {
-    background-image: url('background.png');
+    background-image: url('../images/background.png');
     background-size: cover;         
     background-repeat: no-repeat;
     background-position: center;
