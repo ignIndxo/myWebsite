@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Indo for VP | ECSS</title>
+    <link rel="stylesheet" href="assets/css/campaign.css">
+    <!-- Google Fonts: Inter (Body), Playfair Display (Headings), Caveat (Handwriting) -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="layout-wrapper">
+        
+        <!-- Fixed Sidebar (Inspired by Image 1) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <h1 class="handwriting">Indo for VP</h1>
+                <p class="location">ECSS ELECTIONS, 2026</p>
+                <div class="divider"></div>
+                <p class="bio">
+                    Engineering and Computer Science student passionate about bridging the gap between disciplines. I bring a strong work ethic, sharp organizational skills, and a collaborative mindset to the ECSS. Always looking to elevate student life and push creative boundaries. Let's build something great together.
+                </p>
+                <!-- Hand-drawn arrow pointing to picture -->
+                <div class="arrow-container">
+                    <span class="handwriting-small">that's me!</span>
+                    <svg class="hand-arrow" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 10 Q 50 20 80 80" stroke="#2c2c2c" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M60 85 L82 82 L75 60" stroke="#2c2c2c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="sidebar-bottom">
+                <!-- Replace with your cutout photo -->
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Indo" class="profile-pic">
+                <div class="sidebar-footer">
+                    <a href="#">Resume</a>
+                    <span>© Indo 2024</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Scrolling Content (Inspired by Images 1 & 2) -->
+        <main class="content">
+            
+            <!-- Collage/Zine Hero Section -->
+            <section class="hero-collage reveal">
+                <!-- Circular Rotating Text -->
+                <div class="spinning-badge">
+                    <svg viewBox="0 0 100 100" width="120" height="120">
+                        <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none" />
+                        <text>
+                            <textPath href="#circlePath" startOffset="0%" font-family="Inter" font-size="10.5" font-weight="500" letter-spacing="2" fill="#2c2c2c">
+                                VOTE INDO • ECSS VP • VOTE INDO • ECSS VP • 
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="quote-block parallax-element" data-speed="2">
+                    <h2 class="big-serif">"Empowering the student body by using innovation as a tool to explore <br><strong>what it means to be an engineer.</strong>"</h2>
+                    <p class="quote-author">— Indo</p>
+                </div>
+
+                <!-- Decorative Collage Images -->
+                <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=400&q=80" class="collage-img img-1 parallax-element" data-speed="-1" alt="Scrapbook 1">
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=400&q=80" class="collage-img img-2 parallax-element" data-speed="1.5" alt="Scrapbook 2">
+            </section>
+
+            <!-- Platform Projects (Inspired by Image 1) -->
+            <section class="platform-list">
+                
+                <article class="platform-item reveal">
+                    <div class="item-text">
+                        <h3 class="serif-title">Cross-Discipline Hackathons</h3>
+                        <p>A flagship initiative designed for both Engineering and CS students. The concept is to immerse participants inside a collaborative environment, bridging the gap between hardware and software through a weekend-long project.</p>
+                        <div class="tags">
+                            <span class="pill">Event Design</span>
+                            <span class="pill">Student Life</span>
+                        </div>
+                    </div>
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Hackathon">
+                    </div>
+                </article>
+
+                <article class="platform-item reveal">
+                    <div class="item-text">
+                        <h3 class="serif-title">Transparent Budget Allocation</h3>
+                        <p>My core promise. This initiative critiques previous resource practices, exploring how student fees can be better utilized. Through motion graphics and open town halls, this project challenges the faculty to reflect on transparency and accessibility.</p>
+                        <div class="tags">
+                            <span class="pill">Advocacy</span>
+                            <span class="pill">Policy</span>
+                        </div>
+                    </div>
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Transparency">
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Call to Action (Inspired by Image 2 "Proceed to Portfolio") -->
+            <section class="proceed-cta reveal">
+                <div class="cta-content">
+                    <p class="small-caps">Make your voice heard</p>
+                    <a href="#" class="huge-link">
+                        Proceed to<br>Vote <span class="arrow">➔</span>
+                    </a>
+                    <div class="cta-line"></div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
