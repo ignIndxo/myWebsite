@@ -284,6 +284,56 @@ body {
     margin-top: 1rem;
 }
 
+/* Goback CTA (Image 2 Style) */
+.goback-cta {
+    padding: 8rem 0 4rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cta-content {
+    max-width: 400px;
+}
+
+.small-caps {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.huge-link {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text-dark);
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.huge-link:hover .arrow {
+    transform: translateX(10px);
+    display: inline-block;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.cta-line {
+    height: 2px;
+    background-color: var(--text-dark);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.buttons-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+}
 /* Animations */
 .reveal {
     opacity: 0;
@@ -321,5 +371,10 @@ body {
     .hero-collage {
         height: auto;
         padding: 4rem 0;
+    }
+
+    .buttons-flex {
+    display: flex;
+    flex-direction: column;
     }
 }
